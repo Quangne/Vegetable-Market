@@ -1,0 +1,20 @@
+﻿@page
+@using MarketVegetables.Localization
+@using MarketVegetables.Web.Pages.Categories
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<MarketVegetablesResource> L
+@model IndexModel
+@{
+}
+@section scripts
+{
+    <abp-script src="/Pages/Categories/Category.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <h2>@L["Categories"]</h2>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="BooksTable"></abp-table>
+    </abp-card-body>
+</abp-card>
