@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MarketVegetables.Categories;
+using MarketVegetables.Units;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Application.Dtos;
@@ -15,5 +17,12 @@ namespace MarketVegetables.Products
         public string Producer { get; set; }
         public string ProductDescription { get; set; }
         public float ProductAmount { get; set; }
+    }
+
+    public class ProductDetailsDto
+    {
+        public ProductDto ProductDto { get; set; }
+        public CategoryDto CategoryDto { get; set; }
+        public UnitDto UnitDto { get; set; }
     }
 }

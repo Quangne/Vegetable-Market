@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using Volo.Abp.Application.Dtos;
 
 namespace MarketVegetables.Units
 {
-    public class CreateUpdateUnitDto
+    public class CreateUpdateUnitDto: CreationAuditedEntityDto<int>
     {
         public int UnitId { get; set; }
         [Required]

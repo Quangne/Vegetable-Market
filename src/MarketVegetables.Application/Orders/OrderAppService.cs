@@ -16,8 +16,8 @@ namespace MarketVegetables.Orders
             OrderDto,
             int,
             PagedAndSortedResultRequestDto,
-            CreateUpdateOrderDto,
-            IOrderAppService>
+            CreateUpdateOrderDto>,
+            IOrderAppService
     {
         public OrderAppService(IRepository<Order, int> repository) : base(repository)
         {

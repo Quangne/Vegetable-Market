@@ -1,16 +1,16 @@
 ﻿$(function () {
     var l = abp.localization.getResource('');
-    var createModal = new abp.ModalManager(abp.appPath + 'Categories/CreateModal');
-    var editModal = new abp.ModalManager(abp.appPath + 'Categories/EditModal');
+    var createModal = new abp.ModalManager(abp.appPath + 'Units/CreateModal');
+    var editModal = new abp.ModalManager(abp.appPath + 'Units/EditModal');
 
-    var dataTable = $('#BooksTable').DataTable(
+    var dataTable = $('#UnitsTable').DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
             paging: true,
             order: [[1, "desc"]],
             searching: true,
             scrollX: true,
-            ajax: abp.libs.datatables.createAjax(marketVegetables.categories.category.getList),
+            ajax: abp.libs.datatables.createAjax(marketVegetables.units.unit.getList),
             columnDefs: [
                 {
                     title: l('Actions'),
@@ -32,7 +32,7 @@
                                         );
                                     },
                                     action: function (data) {
-                                        marketVegetables.categories.category
+                                        marketVegetables.Units.category
                                             .delete(data.record.id)
                                             .then(function () {
                                                 abp.notify.info(
@@ -46,13 +46,13 @@
                     }
                 },
                 {
-                    title: l('Category Id'),
+                    title: l('Unit Id'),
                     data: "id",
-                    
+
                 },
                 {
-                    title: l('Category Name'),
-                    data: "categoryName"
+                    title: l('Unit Name'),
+                    data: "unitName"
                 },
                 {
                     title: l('Creation Time'), data: "creationTime",
@@ -75,7 +75,7 @@
         dataTable.ajax.reload();
     });
 
-    $('#NewAuthorButton').click(function (e) {
+    $('#NewUnitButton').click(function (e) {
         e.preventDefault();
         createModal.open();
     });

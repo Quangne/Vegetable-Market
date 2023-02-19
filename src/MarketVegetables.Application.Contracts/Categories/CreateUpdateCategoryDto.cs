@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -11,5 +12,7 @@ namespace MarketVegetables.Categories
         [Required]
         [StringLength(200)]
         public string CategoryName { get; set; }
+        [CanBeNull]
+        public string ImageUrl { get; set; }
     }
 }

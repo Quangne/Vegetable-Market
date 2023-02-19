@@ -16,8 +16,8 @@ namespace MarketVegetables.Units
             UnitDto,
             int,
             PagedAndSortedResultRequestDto,
-            CreateUpdateUnitDto,
-            IUnitAppService>
+            CreateUpdateUnitDto>,
+        IUnitAppService
     {
         public UnitAppService(IRepository<Unit, int> repository) : base(repository)
         {

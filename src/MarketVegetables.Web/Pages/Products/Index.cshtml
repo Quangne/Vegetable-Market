@@ -1,24 +1,24 @@
 ﻿@page
 @using MarketVegetables.Localization
-@using MarketVegetables.Web.Pages.Categories
+@using MarketVegetables.Web.Pages.Products
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<MarketVegetablesResource> L
 @model IndexModel
 @{
 }
 @section scripts
-{
-    <abp-script src="/Pages/Categories/Category.js" />
+    {
+    <abp-script src="/Pages/Products/Product.js" />
 }
 <abp-card>
     <abp-card-header>
         <abp-row>
             <abp-column size-md="_6">
-                <abp-card-title>@L["Categories"]</abp-card-title>
+                <abp-card-title>@L["Product"]</abp-card-title>
             </abp-column>
             <abp-column size-md="_6" class="text-end">
-                <abp-button id="NewAuthorButton"
-                            text="@L["New category"].Value"
+                <abp-button id="NewProdcutButton"
+                            text="@L["New product"].Value"
                             icon="plus"
                             button-type="Primary" />
             </abp-column>
@@ -26,6 +26,6 @@
 
     </abp-card-header>
     <abp-card-body>
-        <abp-table striped-rows="true" id="BooksTable"></abp-table>
+        <abp-table striped-rows="true" id="ProductsTable"></abp-table>
     </abp-card-body>
 </abp-card>

@@ -1,16 +1,16 @@
 ﻿$(function () {
     var l = abp.localization.getResource('');
-    var createModal = new abp.ModalManager(abp.appPath + 'Categories/CreateModal');
-    var editModal = new abp.ModalManager(abp.appPath + 'Categories/EditModal');
+    var createModal = new abp.ModalManager(abp.appPath + 'Products/CreateModal');
+    var editModal = new abp.ModalManager(abp.appPath + 'Products/EditModal');
 
-    var dataTable = $('#BooksTable').DataTable(
+    var dataTable = $('#ProductsTable').DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
             paging: true,
             order: [[1, "desc"]],
             searching: true,
             scrollX: true,
-            ajax: abp.libs.datatables.createAjax(marketVegetables.categories.category.getList),
+            ajax: abp.libs.datatables.createAjax(marketVegetables.products.product.getProductDetails),
             columnDefs: [
                 {
                     title: l('Actions'),
@@ -32,7 +32,7 @@
                                         );
                                     },
                                     action: function (data) {
-                                        marketVegetables.categories.category
+                                        marketVegetables.prodcuts.product
                                             .delete(data.record.id)
                                             .then(function () {
                                                 abp.notify.info(
@@ -46,16 +46,28 @@
                     }
                 },
                 {
-                    title: l('Category Id'),
-                    data: "id",
-                    
+                    title: l('Product Id'),
+                    data: "productDto.id",
+
                 },
                 {
-                    title: l('Category Name'),
-                    data: "categoryName"
+                    title: l('Product Name'),
+                    data: "productDto.productName"
                 },
                 {
-                    title: l('Creation Time'), data: "creationTime",
+                    title: l('Product Description'),
+                    data: "productDto.productDescription"
+                },
+                {
+                    title: l('Unit'),
+                    data: "unitDto.unitName"
+                },
+                {
+                    title: l('Category'),
+                    data: "categoryDto.categoryName"
+                },
+                {
+                    title: l('Creation Time'), data: "productDto.creationTime",
                     render: function (data) {
                         return luxon
                             .DateTime

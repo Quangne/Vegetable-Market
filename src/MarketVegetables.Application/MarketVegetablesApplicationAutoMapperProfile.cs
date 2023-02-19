@@ -17,7 +17,7 @@ public class MarketVegetablesApplicationAutoMapperProfile : Profile
         CreateMap<Unit, UnitDto>();
         CreateMap<CreateUpdateUnitDto, Unit>();
 
-        CreateMap<Product, UnitDto>();
+        CreateMap<Product, ProductDto>();
         CreateMap<CreateUpdateProductDto, Product>();
 
         CreateMap<Order, OrderDto>();

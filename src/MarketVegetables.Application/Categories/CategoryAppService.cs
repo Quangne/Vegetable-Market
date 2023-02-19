@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 
 namespace MarketVegetables.Categories
@@ -15,8 +16,7 @@ namespace MarketVegetables.Categories
             CategoryDto,
             int,
             PagedAndSortedResultRequestDto,
-            CreateUpdateCategoryDto,
-            ICategoryAppService >
+            CreateUpdateCategoryDto>, ICategoryAppService, ITransientDependency
     {
         public CategoryAppService(IRepository<Category,int> repository):base(repository)
         {

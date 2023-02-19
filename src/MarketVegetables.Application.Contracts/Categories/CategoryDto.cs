@@ -9,5 +9,6 @@ namespace MarketVegetables.Categories
     {
         public int CategryId { get; set; }
         public string CategoryName { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

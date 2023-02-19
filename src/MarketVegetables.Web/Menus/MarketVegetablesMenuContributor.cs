@@ -41,7 +41,30 @@ public class MarketVegetablesMenuContributor : IMenuContributor
                 icon : "fas fa-solid fa-list",
                 order: 1
             ));
-
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                MarketVegetablesMenus.Product,
+                l["Product"],
+                "/Products",
+                icon: "fas fa-brands fa-product-hunt",
+                order: 1
+            ));
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                MarketVegetablesMenus.Order,
+                l["Order List"],
+                "/Orders",
+                icon: "fa-brands fa-jedi-order",
+                order: 1
+            ));
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                MarketVegetablesMenus.Unit,
+                l["Unit"],
+                "/Units",
+                icon: "fa-brands fa-jedi-order",
+                order: 1
+            ));
         if (MultiTenancyConsts.IsEnabled)
         {
             administration.SetSubItemOrder(TenantManagementMenuNames.GroupName, 1);
